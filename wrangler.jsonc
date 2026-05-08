@@ -1,0 +1,27 @@
+/**
+ * For more details on how to configure Wrangler, refer to:
+ * https://developers.cloudflare.com/workers/wrangler/configuration/
+ */
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "vs-awards-d1-rest",
+	"main": "src/index.ts",
+	"compatibility_date": "2025-03-03",
+    "d1_databases": [
+        {
+          "binding": "DB",
+          "database_name": "vs-awards",
+          "database_id": "5705586f-fff2-4e96-96b1-a2721778aa6b"
+        }
+    ],
+    "secrets_store_secrets": [
+        {
+            "store_id": "492f3a7cbb6943bd8fb02e060fba6668",
+            "binding": "SECRET",
+            "secret_name": "d1-vs-awards"
+        }
+    ],
+	"observability": {
+		"enabled": true
+	}
+}
